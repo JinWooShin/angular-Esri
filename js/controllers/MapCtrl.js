@@ -1,7 +1,6 @@
 /**
  * Created by Jin Woo Shin on 12/5/2014.
  */
-
 (function() {
     'use strict';
 
@@ -9,7 +8,6 @@
         'angular',
         'esri/map'
     ], function(angular, Map) {
-
         function init(App) {
             App.controller('MapCtrl', ['$rootScope', '$scope', '$attrs', function($rootScope, $scope, $attrs) {
                 var self = this;

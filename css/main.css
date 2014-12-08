@@ -7,11 +7,27 @@
     width: 200px;
     height: 100%;
     float: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*TileContainer*/
+.tileContainer.horizontal {
+    width: 500px;
+    padding: 10px;
+}
+.panel-body.tile {
+    padding:3px;
+}
+
+#map {
+    height: 300px;
 }
 
 /*Toolbar*/
 .toolbar.horizontal {
     width:60px;
+    overflow: hidden;
 }
 .panel-body.toolbar {
     padding: 3px 3px 10px 3px;

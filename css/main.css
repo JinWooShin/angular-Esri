@@ -11,9 +11,7 @@
 
 /*Toolbar*/
 .toolbar.horizontal {
-    position: fixed;
     width:60px;
-    height: 95%;
 }
 .panel-body.toolbar {
     padding: 3px 3px 10px 3px;

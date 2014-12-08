@@ -17,7 +17,7 @@
 </head>
 <body>
     <toolbar></toolbar>
-    <tileContainer ng-if="panelContainers.length==0">Tile Container</tileContainer>
+    <tileContainer ng-if="!panelContainers || panelContainers.length==0">Tile Container</tileContainer>
     <panelContainer ng-if="panelContainers.length>0">Panel Container</panelContainer>
 </body>
 </html>

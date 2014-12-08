@@ -15,6 +15,12 @@
                 $scope.openSearchPanel = function() {
 
                 };
+                $scope.openBrowserPanel = function() {
+
+                };
+                $scope.saveStatus = function() {
+                    var panelStatus = [];
+                }
             }]);
             App.directive('toolbar', function() {
                return {

@@ -25,6 +25,9 @@
             name: 'services',
             location: locationPath + '/js/services'
         }, {
+            name: 'templates',
+            location: locationPath + '/js/templates'
+        }, {
             name: 'js',
             location: locationPath + '/js'
         }]

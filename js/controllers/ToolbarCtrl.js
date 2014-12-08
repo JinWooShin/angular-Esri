@@ -8,16 +8,19 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', 'attrs', function ($rootScope, $scope, $attrs){
+            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', '$attrs', function ($rootScope, $scope, $attrs){
+                $scope.openMapPanel = function() {
+                    console.log("Click map open");
+                };
+                $scope.openSearchPanel = function() {
 
+                };
             }]);
             App.directive('toolbar', function() {
                return {
                    restrict: 'EA',
-                   controller: 'ToolbarCtrl',
-                   link: function(scope, element, attrs, ctrl) {
-                       ctrl.init(element);
-                   }
+                   templateUrl: 'js/templates/toolbar.html',
+                   controller: 'ToolbarCtrl'
                }
             });
         };

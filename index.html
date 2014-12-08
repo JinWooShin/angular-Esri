@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
     <script src="bower_components/angularjs/angular.js"></script>
@@ -15,6 +16,8 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-
+    <toolbar></toolbar>
+    <tileContainer ng-if="panelContainers.length==0">Tile Container</tileContainer>
+    <panelContainer ng-if="panelContainers.length>0">Panel Container</panelContainer>
 </body>
 </html>

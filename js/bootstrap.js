@@ -7,13 +7,14 @@
     define([
         'angular',
         'controllers/indexCtrl',
-        'controllers/MapCtrl'
-    ], function(angular, indexCtrl, MapCtrl) {
+        'controllers/MapCtrl',
+        'controllers/ToolbarCtrl'
+    ], function(angular, indexCtrl, MapCtrl, ToolbarCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap']);
             indexCtrl.start(App);
             MapCtrl.start(App);
-
+            ToolbarCtrl.start(App);
             angular.bootstrap(document.body, ['app']);
             return App;
         }

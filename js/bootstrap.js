@@ -8,6 +8,7 @@
         'angular',
 
         'services/PanelService',
+        'services/ResizeService',
 
         'controllers/indexCtrl',
         'controllers/MapCtrl',
@@ -15,11 +16,12 @@
         'controllers/TileContainerCtrl',
         'controllers/PanelContainerCtrl',
         'controllers/PanelCtrl'
-    ], function(angular, PanelService, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
+    ], function(angular, PanelService, ResizeService, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap']);
 
             PanelService.start(App);
+            ResizeService.start(App);
 
             indexCtrl.start(App);
             MapCtrl.start(App);

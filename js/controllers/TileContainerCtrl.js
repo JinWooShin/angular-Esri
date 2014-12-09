@@ -13,22 +13,13 @@
 
 
             }]);
-
             App.directive('tileContainer', ['$window', function($window) {
                return {
                    restrict: 'EA',
                    templateUrl: 'js/templates/tileContainer.html',
                    controller: 'TileContainerCtrl',
-                   link: function(scope, element, attrs, ctrl) {
-                       angular.element($window).bind("resize", function(e) {
-                           setHeight();
-                       });
-                       function setHeight() {
-                           element.children().css("height", (window.innerHeight - 16) + "px");
-                       };
-                       setHeight();
-
-
+                   link: function(scope, element) {
+                       element.children().css("height", (window.innerHeight - 16 - 10 /*scrollbar height*/) + "px");
                    }
                }
             }]);

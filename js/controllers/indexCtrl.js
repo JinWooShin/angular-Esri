@@ -5,17 +5,15 @@
     'use strict';
 
     define([
-        'angular',
-        'esri/map'
-    ], function(angular, Map) {
-        function indexCtrl($scope) {
-            $scope.test = "TEST";
-        }
+        'angular'
+    ], function(angular) {
 
         function init(App) {
-            App.controller('indexCtrl', ['$scope', indexCtrl]);
-            return indexCtrl;
-        }
+            App.controller('IndexCtrl', ['$scope', function($scope) {
+
+
+            }]);
+        };
         return {start: init};
     })
 }).call(this);

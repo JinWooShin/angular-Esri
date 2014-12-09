@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" style="overflow-y: hidden;">
 <head lang="en">
-    <meta charset="UTF-8">
     <title></title>
 
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
@@ -16,8 +16,10 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-    <toolbar></toolbar>
-    <tile-container ng-if="!panelContainers || panelContainers.length==0"></tile-container>
-    <panel-container ng-if="getPanels().length>0">Panel Container</panel-container>
+    <div class="layoutContainer">
+        <toolbar></toolbar>
+        <tile-container></tile-container>
+        <panel-container></panel-container>
+    </div>
 </body>
 </html>

@@ -1,3 +1,8 @@
+
+.layoutContainer {
+    margin: 0px;
+    padding: 0px;
+}
 /*Panel*/
 .horizontal{
     position: relative;
@@ -12,6 +17,14 @@
 }
 .panel {
     border-radius: 0px;
+}
+
+.panelContainer {
+    overflow: hidden;
+}
+.panel-body.layoutPanel {
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /*TileContainer*/

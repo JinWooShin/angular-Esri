@@ -16,19 +16,19 @@
                     PanelService.addPanel(type);
                 };
             }]);
-            App.directive('toolbar', ['$window', function($window) {
+            App.directive('toolbar', ['$window', 'ResizeService', function($window, ResizeService) {
                return {
                    restrict: 'EA',
                    templateUrl: 'js/templates/toolbar.html',
                    controller: 'ToolbarCtrl',
                    link: function(scope, element, attrs, ctrl) {
                        angular.element($window).bind("resize", function(e) {
-                           setHeight();
+                           ResizeService.setHeight()
                        });
-                       function setHeight() {
-                           element.children().css("height", (window.innerHeight - 16) + "px");
-                       };
-                       setHeight();
+                       //function setHeight() {
+                       //    element.children().css("height", (window.innerHeight - 16 - 10 /*scrollbar height*/) + "px");
+                       //};
+                       ResizeService.setHeight();
                    }
                }
             }]);

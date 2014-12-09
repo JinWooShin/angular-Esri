@@ -7,7 +7,7 @@
         'angular'
     ],function(angular) {
         function init(App) {
-            App.service('PanelService', function(){
+            App.service('PanelService', ['$rootScope', function($rootScope){
                 var panels = [];
                 this.clearPanel = function() {
                     panels = [];
@@ -18,6 +18,7 @@
                         content: "something goes here"
                     };
                     panels.push(panel);
+                    $rootScope.$broadcast("panelChanged")
                 };
                 this.removePanel = function(panel) {
 
@@ -34,7 +35,7 @@
                 this.getPanels = function() {
                     return panels;
                 };
-            });
+            }]);
         };
         return {start: init};
     });

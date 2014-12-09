@@ -8,9 +8,13 @@
     ], function(angular) {
         function init(App) {
             App.controller("PanelContainerCtrl", ['$rootScope', '$scope', 'PanelService', function($rootScope, $scope, PanelService) {
+                $scope.panels = $scope.getPanels();
                 $scope.getPanels = function() {
                     return PanelService.getPanels();
                 };
+                $scope.$on("panelChanged", function() {
+                    $scope.panels = $scope.getPanels();
+                });
 
 
             }]);

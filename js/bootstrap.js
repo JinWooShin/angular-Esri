@@ -11,8 +11,9 @@
         'controllers/ToolbarCtrl',
         'controllers/TileContainerCtrl',
         'services/PanelService',
-        'controllers/PanelContainerCtrl'
-    ], function(angular, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelService, PanelContainerStrl) {
+        'controllers/PanelContainerCtrl',
+        'controllers/PanelCtrl'
+    ], function(angular, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelService, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap']);
 
@@ -22,7 +23,8 @@
             MapCtrl.start(App);
             ToolbarCtrl.start(App);
             TileContainer.start(App);
-            PanelContainerStrl.start(App)
+            PanelContainerCtrl.start(App);
+            PanelCtrl.start(App);
 
 
             angular.bootstrap(document.body, ['app']);

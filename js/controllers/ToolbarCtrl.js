@@ -15,6 +15,9 @@
                 $scope.openPanel = function(type) {
                     PanelService.addPanel(type);
                 };
+                $scope.saveStatus = function() {
+                    PanelService.saveAllPanels();
+                }
             }]);
             App.directive('toolbar', ['$window', 'ResizeService', function($window, ResizeService) {
                return {

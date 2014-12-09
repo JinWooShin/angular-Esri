@@ -10,6 +10,7 @@
         function init(App) {
             App.controller("PanelCtrl", ['$scope', '$rootScope', '$element', 'PanelService', function($scope, $rootScope, $element,  PanelService) {
                 $scope.addChildPanel = function() {
+                    console.log($scope.panel);
                 };
 
 

@@ -18,7 +18,7 @@
         'controllers/PanelCtrl'
     ], function(angular, PanelService, ResizeService, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
-            var App = angular.module('app', ['ui.bootstrap']);
+            var App = angular.module('app', ['ngAnimate']);
 
             PanelService.start(App);
             ResizeService.start(App);

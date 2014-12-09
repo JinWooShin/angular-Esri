@@ -9,8 +9,10 @@
     ], function(angular) {
         function init(App) {
 
-            App.controller('TileContainerCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
-
+            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelService', function($rootScope, $scope, PanelService) {
+                $scope.getPanels = function() {
+                    return PanelService.getPanels();
+                };
 
             }]);
             App.directive('tileContainer', ['$window', function($window) {

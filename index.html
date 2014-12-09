@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
-    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="http://js.arcgis.com/3.11/"></script>
 
@@ -18,8 +18,8 @@
 <body>
     <div class="layoutContainer">
         <toolbar></toolbar>
-        <tile-container></tile-container>
-        <panel-container></panel-container>
+        <tile-container ng-show="getPanels().length===0"></tile-container>
+        <panel-container ng-show="getPanels().length>0"></panel-container>
     </div>
 </body>
 </html>

@@ -9,13 +9,18 @@
         function init(App) {
             App.service('PanelService', ['$rootScope', function($rootScope){
                 var panels = [];
-                this.clearPanel = function() {
+                this.clear = function() {
                     panels = [];
                 };
                 this.addPanel = function(type) {
                     var panel = {
-                        title: type,
-                        content: "something goes here"
+                        parent: "root",
+                        children: [],
+                        lock: false,
+                        content: {
+                            title: type,
+                            content: "something goes here"
+                        }
                     };
                     panels.push(panel);
                     $rootScope.$broadcast("panelChanged", panels);

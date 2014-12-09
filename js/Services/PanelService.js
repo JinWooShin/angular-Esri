@@ -18,7 +18,8 @@
                         content: "something goes here"
                     };
                     panels.push(panel);
-                    $rootScope.$broadcast("panelChanged")
+                    $rootScope.$broadcast("panelChanged", panels);
+
                 };
                 this.removePanel = function(panel) {
 

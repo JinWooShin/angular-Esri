@@ -30,7 +30,7 @@
                 this.createMap = function() {
                     var options = {
                         center: $attrs.center ? JSON.parse($attrs.center) : [-56.049, 38.485],
-                        zoom: $attrs.zoom ? parseInt($attrs.zoom) : 1,
+                        zoom: $attrs.zoom ? parseInt($attrs.zoom) : 2,
                         basemap: $attrs.basemap ? $attrs.basemap : 'streets'
                     };
                     $scope.map = new Map($attrs.id, options);

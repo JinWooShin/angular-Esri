@@ -6,14 +6,16 @@
 
     define([
         'angular',
+
+        'services/PanelService',
+
         'controllers/indexCtrl',
         'controllers/MapCtrl',
         'controllers/ToolbarCtrl',
         'controllers/TileContainerCtrl',
-        'services/PanelService',
         'controllers/PanelContainerCtrl',
         'controllers/PanelCtrl'
-    ], function(angular, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelService, PanelContainerCtrl, PanelCtrl) {
+    ], function(angular, PanelService, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap']);
 

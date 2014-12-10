@@ -20,7 +20,7 @@
                    });
                    angular.forEach(panels, function(panel) {
                        if(panel) {
-                           panel.style.height = (window.innerHeight - 28 - 10 /*scrollbar height*/) + "px";
+                           panel.style.height = (window.innerHeight - 18 - 10 /*scrollbar height*/) + "px";
                        }
                    });
                };

@@ -1,5 +1,14 @@
 <div class="panel panel-default layoutPanel horizontal">
-    <div class="panel-heading">{{panel.content.title}}</div>
+
+    <div class="panelHeadTop">
+        <div class="btn-group pull-right">
+            <a href="#" ><i ng-class="{ 'fa fa-lock':panel.lock, 'fa fa-unlock':panel.lock===false}" class="panelHeadButton" ng-click="toggleLock()"></i></a>
+            <a href="#" ><i class="fa fa-times panelHeadButton" ng-class="{inactive: panel.lock}" ng-click="closePanel()"></i></a>
+        </div>
+    </div>
+    <div class="panelHead">
+        {{panel.content.title}}
+    </div>
     <div class="panel-body layoutPanel">
         <div>{{panel.content.content}}</div>
         <button type="button" class="btn btn-default" value="Add child" ng-click="addChildPanel()"></button>

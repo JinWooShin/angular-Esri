@@ -38,7 +38,7 @@
         'js/bootstrap'
     ], function(ready, bootstrap) {
         ready(function() {
-            console.info('start the bootstrapper');
+            console.log('start the bootstrapper');
             bootstrap.start();
         });
     });

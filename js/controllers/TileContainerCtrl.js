@@ -9,9 +9,9 @@
     ], function(angular) {
         function init(App) {
 
-            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelService', function($rootScope, $scope, PanelService) {
+            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelProvider', function($rootScope, $scope, PanelProvider) {
                 $scope.getPanels = function() {
-                    return PanelService.getPanels();
+                    return PanelProvider.getPanels();
                 };
 
             }]);

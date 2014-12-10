@@ -8,10 +8,10 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller('PanelContainerCtrl', ['$rootScope',  '$scope', '$element', 'PanelService', function ($rootScope, $scope, $element, PanelService){
+            App.controller('PanelContainerCtrl', ['$rootScope',  '$scope', '$element', 'PanelProvider', function ($rootScope, $scope, $element, PanelProvider){
 
                 $scope.getPanels = function() {
-                    return PanelService.getPanels();
+                    return PanelProvider.getPanels();
                 };
                 $scope.$on("panelChanged", function() {
                     $scope.panels = $scope.getPanels();

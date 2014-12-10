@@ -7,8 +7,8 @@
     define([
         'angular',
 
-        'services/PanelService',
         'services/ResizeService',
+        'services/PanelProvider',
 
         'controllers/indexCtrl',
         'controllers/MapCtrl',
@@ -16,11 +16,13 @@
         'controllers/TileContainerCtrl',
         'controllers/PanelContainerCtrl',
         'controllers/PanelCtrl'
-    ], function(angular, PanelService, ResizeService, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
+    ], function(angular, ResizeService, PanelProvider, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap', 'ngAnimate']);
 
-            PanelService.start(App);
+
+
+            PanelProvider.start(App);
             ResizeService.start(App);
 
             indexCtrl.start(App);
@@ -30,6 +32,13 @@
             PanelContainerCtrl.start(App);
             PanelCtrl.start(App);
 
+            App.config(function(PanelProviderProvider) {
+                PanelProviderProvider.panelsConfig = {
+                    map: {
+                        title: "Map"
+                    }
+                };
+            });
 
             angular.bootstrap(document.body, ['app']);
             return App;

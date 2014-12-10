@@ -8,15 +8,15 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', '$attrs', 'PanelService', function ($rootScope, $scope, $attrs, PanelService){
+            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', '$attrs', 'PanelProvider', function ($rootScope, $scope, $attrs, PanelProvider){
                 $scope.goHome = function() {
-                    PanelService.clear();
+                    PanelProvider.clear();
                 };
                 $scope.openPanel = function(type) {
-                    PanelService.addPanel(type);
+                    PanelProvider.addPanel(type);
                 };
                 $scope.saveStatus = function() {
-                    PanelService.saveAllPanels();
+                    PanelProvider.saveAllPanels();
                 }
             }]);
             App.directive('toolbar', ['$window', 'ResizeService', function($window, ResizeService) {

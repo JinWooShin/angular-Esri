@@ -8,7 +8,7 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller("PanelCtrl", ['$scope', '$rootScope', '$element', '$log', 'PanelService', function($scope, $rootScope, $element, $log, PanelService) {
+            App.controller("PanelCtrl", ['$scope', '$rootScope', '$element', '$log', 'PanelProvider', function($scope, $rootScope, $element, $log, PanelProvider) {
                 $scope.addChildPanel = function() {
                     console.log($scope.panel);
                 };
@@ -17,15 +17,15 @@
                 };
                 $scope.closePanel = function() {
                     if(!$scope.panel.lock) {
-                        PanelService.removePanel($scope.panel);
+                        PanelProvider.removePanel($scope.panel);
                     } else {
-                        $log.info("Cannot close locked panel");
+                        $log.debug("Cannot close locked panel");
                     }
                 }
 
 
                 $scope.getStyle = function() {
-                    var panels = PanelService.getPanels();
+                    var panels = PanelProvider.getPanels();
                     if (panels.length>0) {
                         $element.children()[0].style.height = (window.innerHeight - 28 - 10 /*scrollbar height*/) + "px";
                     }

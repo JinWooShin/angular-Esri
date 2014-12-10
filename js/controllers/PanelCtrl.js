@@ -8,11 +8,20 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller("PanelCtrl", ['$scope', '$rootScope', '$element', 'PanelService', function($scope, $rootScope, $element,  PanelService) {
+            App.controller("PanelCtrl", ['$scope', '$rootScope', '$element', '$log', 'PanelService', function($scope, $rootScope, $element, $log, PanelService) {
                 $scope.addChildPanel = function() {
                     console.log($scope.panel);
                 };
-
+                $scope.toggleLock = function() {
+                    $scope.panel.lock = !$scope.panel.lock;
+                };
+                $scope.closePanel = function() {
+                    if(!$scope.panel.lock) {
+                        PanelService.removePanel($scope.panel);
+                    } else {
+                        $log.info("Cannot close locked panel");
+                    }
+                }
 
 
                 $scope.getStyle = function() {
@@ -33,7 +42,7 @@
                         panel:"="
                     },
                     link: function(scope, element) {
-                        element.children().css("height", (window.innerHeight - 28 - 10 /*scrollbar height*/) + "px");
+                        element.children().css("height", (window.innerHeight - 18 - 10 /*scrollbar height*/) + "px");
                     }
                 };
             });

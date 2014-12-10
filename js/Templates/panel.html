@@ -1,7 +1,9 @@
-<div class="panel panel-default layoutPanel horizontal">
+<div class="panel panel-default layoutPanel horizontal" ng-class="{'collapse':panel.collapse===true}">
 
     <div class="panelHeadTop">
         <div class="btn-group pull-right">
+            <a href="#"><i ng-class="{'fa fa-angle-double-right':panel.collapse===true, 'fa fa-angle-double-left':panel.collapse===false}" class="panelHeadButton" ng-click="toggleCollapse()"></i></a>
+            <a href="#"><i class="fa fa-save panelHeadButton" ng-click="savePanel()"></i></a>
             <a href="#" ><i ng-class="{ 'fa fa-lock':panel.lock, 'fa fa-unlock':panel.lock===false}" class="panelHeadButton" ng-click="toggleLock()"></i></a>
             <a href="#" ><i class="fa fa-times panelHeadButton" ng-class="{inactive: panel.lock}" ng-click="closePanel()"></i></a>
         </div>
@@ -10,7 +12,7 @@
         {{panel.content.title}}
     </div>
     <div class="panel-body layoutPanel">
-        <div>{{panel.content.content}}</div>
-        <button type="button" class="btn btn-default" value="Add child" ng-click="addChildPanel()"></button>
+        <!--<div>{{panel.content.content}}</div>-->
+        <div ng-include="panel.templateUrl" ></div>
     </div>
 </div>

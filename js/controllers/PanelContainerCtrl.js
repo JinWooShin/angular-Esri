@@ -9,7 +9,6 @@
     ], function(angular) {
         function init(App) {
             App.controller('PanelContainerCtrl', ['$rootScope',  '$scope', '$element', 'PanelProvider', function ($rootScope, $scope, $element, PanelProvider){
-
                 $scope.getPanels = function() {
                     return PanelProvider.getPanels();
                 };

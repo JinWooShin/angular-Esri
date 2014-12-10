@@ -15,12 +15,18 @@
                 $scope.toggleLock = function() {
                     $scope.panel.lock = !$scope.panel.lock;
                 };
+                $scope.toggleCollapse = function() {
+                    $scope.panel.collapse = !$scope.panel.collapse;
+                }
                 $scope.closePanel = function() {
                     if(!$scope.panel.lock) {
                         PanelProvider.removePanel($scope.panel);
                     } else {
                         $log.debug("Cannot close locked panel");
                     }
+                };
+                $scope.savePanel = function() {
+                    PanelProvider.savePanel($scope.panel);
                 }
 
 

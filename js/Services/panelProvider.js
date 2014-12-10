@@ -16,7 +16,7 @@
                         case "map":
                             panel = {
                                 id: "panel-map",
-                                templateUrl: "/js/Templates/panelMap.html",
+                                templateUrl: "js/templates/panelMap.html",
                                 content: {
                                     title: "Map",
                                     content: "Map goes here"
@@ -47,6 +47,7 @@
                     panel.parent = "root";
                     panel.children = [];
                     panel.lock = false;
+                    panel.collapse = false;
                     return panel;
                 };
 
@@ -73,6 +74,7 @@
                             }
                         },
                         savePanel: function(panel) {
+                            $log.debug("Save panel: "+panel.content.title);
                         },
                         saveAllPanels: function() {
                         },

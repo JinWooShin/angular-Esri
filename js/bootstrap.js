@@ -19,9 +19,6 @@
     ], function(angular, ResizeService, PanelProvider, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap', 'ngAnimate']);
-
-
-
             PanelProvider.start(App);
             ResizeService.start(App);
 
@@ -32,10 +29,12 @@
             PanelContainerCtrl.start(App);
             PanelCtrl.start(App);
 
+
+            //Panel configuration
             App.config(function(PanelProviderProvider) {
                 PanelProviderProvider.panelsConfig = {
-                    map: {
-                        title: "Map"
+                    wellInfo: {
+                        default: ["toc"]
                     }
                 };
             });

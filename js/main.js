@@ -20,13 +20,13 @@
             location: locationPath + '/js/controllers'
         }, {
             name: 'helpers',
-            location: locationPath + '/js/helpers'
+            location: locationPath + '/js/Helpers'
         }, {
             name: 'services',
-            location: locationPath + '/js/services'
+            location: locationPath + '/js/Services'
         }, {
             name: 'templates',
-            location: locationPath + '/js/templates'
+            location: locationPath + '/js/Templates'
         }, {
             name: 'js',
             location: locationPath + '/js'

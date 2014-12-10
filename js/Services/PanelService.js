@@ -13,15 +13,42 @@
                     panels = [];
                 };
                 this.addPanel = function(type) {
-                    var panel = {
-                        parent: "root",
-                        children: [],
-                        lock: false,
-                        content: {
-                            title: type,
-                            content: "something goes here"
-                        }
+                    var panel = {};
+                    switch(type) {
+                        case "map":
+                            panel = {
+                                id: "panel-map",
+                                templateUrl: "/js/Templates/panelMap.html",
+                                content: {
+                                    title: "Map",
+                                    content: "Map goes here"
+                                }
+                            };
+                            break;
+                        case "search":
+                            panel = {
+                                id: "panel-search",
+                                templateUrl: "",
+                                content: {
+                                    title: "Search",
+                                    content: "Filter goes here"
+                                }
+                            };
+                            break;
+                        default:
+                            panel = {
+                                id: "panel-default",
+                                templateUrl: "",
+                                content: {
+                                    title: type,
+                                    content: "Whatever goes here"
+                                }
+                            }
+                            break;
                     };
+                    panel.parent = "root";
+                    panel.children = [];
+                    panel.lock = false;
                     panels.push(panel);
                     $rootScope.$broadcast("panelChanged", panels);
                 };

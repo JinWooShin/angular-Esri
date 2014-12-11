@@ -27,6 +27,7 @@
     overflow: hidden;
     padding:0px;
     border:0px;
+    width: auto !important;
 }
 .panel-body.layoutPanel {
     overflow-y: auto;
@@ -69,6 +70,7 @@
     width: 40px;
     min-width: 40px;
 }
+
 .layoutPanel.horizontal.minimize  > .panelHead {
     transform: rotate(90deg);
 }
@@ -79,9 +81,9 @@
     height:40px;
     background-color: #3c763d;
 }
-.layoutPanel.horizontal.minimize  > .panel-body.layoutPanel {
+/*.layoutPanel.horizontal.minimize  > .panel-body.layoutPanel {*/
 
-}
+/*}*/
 /***********************/
 /***  TileContainer  ***/
 /***********************/

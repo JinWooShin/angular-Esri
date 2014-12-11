@@ -21,6 +21,11 @@
                     } else {
                         $scope.panel.collapse = !$scope.panel.collapse;
                     }
+                    if($scope.panel.collapse) {
+                        $element[0].querySelector('.panelHeadTitle').style.width = (window.innerHeight - 28) + "px";
+                    } else {
+                        $element[0].querySelector('.panelHeadTitle').style.width = "auto";
+                    }
                     $rootScope.$broadcast("panelChanged");
                 }
                 $scope.closePanel = function() {

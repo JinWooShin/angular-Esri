@@ -6,9 +6,12 @@
     /*width: 200px;*/
     height: 100%;
     float: left;
+    overflow: hidden;}
+.panel-body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
 
 /*overall layout container*/
 .layoutContainer {
@@ -67,8 +70,8 @@
     padding:0px;
 }
 .layoutPanel.horizontal.minimize {
-    width: 40px;
-    min-width: 40px;
+    width: 30px;
+    min-width: 30px;
 }
 
 .layoutPanel.horizontal.minimize  > .panelHead {
@@ -78,8 +81,9 @@
     display: none;
 }
 .layoutPanel.horizontal.minimize  > .panelHead > .panelHeadTitle {
-    height:40px;
-    background-color: #3c763d;
+    height:30px;
+    color: #bebebe;
+    background-color: #3c645a;
 }
 /*.layoutPanel.horizontal.minimize  > .panel-body.layoutPanel {*/
 
@@ -98,7 +102,7 @@
     padding: 0px;
 }
 #map {
-    height: 400px;
+    height: 100%            ;
     width: 400px;
 }
 .row.tile {

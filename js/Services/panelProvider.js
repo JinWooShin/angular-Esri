@@ -20,7 +20,7 @@
                     switch(type) {
                         case "map":
                             panel = {
-                                templateUrl: "js/templates/panelMap.html",
+                                templateUrl: "js/templates/Panels/panel_map.html",
                                 content: {
                                     title: "Map",
                                     content: "Map goes here"
@@ -32,6 +32,15 @@
                                 templateUrl: "",
                                 content: {
                                     title: "Search",
+                                    content: "Filter goes here"
+                                }
+                            };
+                            break;
+                        case "project":
+                            panel = {
+                                templateUrl: "js/Templates/Panels/panel-project.html",
+                                content: {
+                                    title: "Project",
                                     content: "Filter goes here"
                                 }
                             };

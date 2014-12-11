@@ -11,17 +11,20 @@
         'services/PanelProvider',
 
         'controllers/indexCtrl',
+        'controllers/ProjectCtrl',
         'controllers/MapCtrl',
         'controllers/ToolbarCtrl',
         'controllers/TileContainerCtrl',
         'controllers/PanelContainerCtrl',
         'controllers/PanelCtrl'
-    ], function(angular, ResizeService, PanelProvider, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
+    ], function(angular, ResizeService, PanelProvider,
+                ProjectCtrl, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init() {
             var App = angular.module('app', ['ui.bootstrap', 'ngAnimate']);
             PanelProvider.start(App);
             ResizeService.start(App);
 
+            ProjectCtrl.start(App);
             indexCtrl.start(App);
             MapCtrl.start(App);
             ToolbarCtrl.start(App);

@@ -15,8 +15,13 @@
                 $scope.toggleLock = function() {
                     $scope.panel.lock = !$scope.panel.lock;
                 };
-                $scope.toggleCollapse = function() {
-                    $scope.panel.collapse = !$scope.panel.collapse;
+                $scope.toggleCollapse = function(isCollapsed) {
+                    if(isCollapsed) {
+                        $scope.panel.collapse = false;
+                    } else {
+                        $scope.panel.collapse = !$scope.panel.collapse;
+                    }
+                    $rootScope.$broadcast("panelChanged");
                 }
                 $scope.closePanel = function() {
                     if(!$scope.panel.lock) {

@@ -2,7 +2,7 @@
  * Created by jwshin on 12/8/2014.
  */
 (function() {
-    'use restrict';
+    'use strict';
 
     define([
         'angular'
@@ -15,7 +15,7 @@
                 };
 
             }]);
-            App.directive('tileContainer', ['$window', function($window) {
+            App.directive('tileContainer', ['$window', function() {
                return {
                    restrict: 'EA',
                    templateUrl: 'js/templates/tileContainer.html',
@@ -25,7 +25,7 @@
                    }
                }
             }]);
-        };
+        }
         return {start: init};
     });
 }).call(this);

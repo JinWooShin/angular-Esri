@@ -24,18 +24,15 @@
                    restrict: 'EA',
                    templateUrl: 'js/templates/toolbar.html',
                    controller: 'ToolbarCtrl',
-                   link: function(scope, element, attrs, ctrl) {
-                       angular.element($window).bind("resize", function(e) {
+                   link: function() {
+                       angular.element($window).bind("resize", function() {
                            ResizeService.setHeight()
                        });
-                       //function setHeight() {
-                       //    element.children().css("height", (window.innerHeight - 16 - 10 /*scrollbar height*/) + "px");
-                       //};
                        ResizeService.setHeight();
                    }
                }
             }]);
-        };
+        }
         return {start: init};
     })
 }).call(this);

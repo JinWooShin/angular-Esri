@@ -27,7 +27,7 @@
                         $element[0].querySelector('.panelHeadTitle').style.width = "auto";
                     }
                     $rootScope.$broadcast("panelChanged");
-                }
+                };
                 $scope.closePanel = function() {
                     if(!$scope.panel.lock) {
                         PanelProvider.removePanel($scope.panel);
@@ -37,7 +37,7 @@
                 };
                 $scope.savePanel = function() {
                     PanelProvider.savePanel($scope.panel);
-                }
+                };
 
 
                 $scope.getStyle = function() {
@@ -62,7 +62,7 @@
                     }
                 };
             });
-        };
+        }
         return {start: init};
     });
 }).call(this);

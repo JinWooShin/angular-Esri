@@ -13,7 +13,7 @@
 
 
             }]);
-        };
+        }
         return {start: init};
     })
 }).call(this);

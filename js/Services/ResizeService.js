@@ -8,7 +8,7 @@
         'angular'
     ], function(angular) {
        function init(App) {
-           App.service('ResizeService', ['$rootScope', function($rootScope) {
+           App.service('ResizeService', ['$rootScope', function() {
 
                this.setHeight = function() {
                    var containers = [document.querySelector("#toolbar"), document.querySelector("#tileContainer"), document.querySelector("#panelContainer")];
@@ -25,7 +25,7 @@
                    });
                };
            }]);
-       };
+       }
        return {start: init};
     });
 }).call(this);

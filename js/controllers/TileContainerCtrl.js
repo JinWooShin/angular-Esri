@@ -9,12 +9,14 @@
     ], function(angular) {
         function init(App) {
 
-            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelProvider', function($rootScope, $scope, PanelProvider) {
-                $scope.getPanels = function() {
-                    return PanelProvider.getPanels();
-                };
+            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelProvider',
+                function($rootScope, $scope, PanelProvider) {
+                    $scope.getPanels = function() {
+                        return PanelProvider.getPanels();
+                    };
 
-            }]);
+                }
+            ]);
             App.directive('tileContainer', ['$window', function() {
                return {
                    restrict: 'EA',

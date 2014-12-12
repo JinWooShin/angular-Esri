@@ -21,6 +21,9 @@
                    angular.forEach(panels, function(panel) {
                        if(panel) {
                            panel.style.height = (window.innerHeight - 18 - 10 /*scrollbar height*/) + "px";
+                           if(panel.classList.contains("minimize")) {
+                               panel.querySelector(".panelHeadTitle").style.width = (window.innerHeight - 28) + "px";
+                           }
                        }
                    });
                };

@@ -8,17 +8,19 @@
         'angular'
     ], function(angular) {
         function init(App) {
-            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', '$attrs', 'PanelProvider', function ($rootScope, $scope, $attrs, PanelProvider){
-                $scope.goHome = function() {
-                    PanelProvider.clear();
-                };
-                $scope.openPanel = function(type) {
-                    PanelProvider.addPanel(type);
-                };
-                $scope.saveStatus = function() {
-                    PanelProvider.saveAllPanels();
+            App.controller('ToolbarCtrl', ['$rootScope',  '$scope', '$attrs', 'PanelProvider',
+                function ($rootScope, $scope, $attrs, PanelProvider){
+                    $scope.goHome = function() {
+                        PanelProvider.clear();
+                    };
+                    $scope.openPanel = function(type) {
+                        PanelProvider.addPanel(type);
+                    };
+                    $scope.saveStatus = function() {
+                        PanelProvider.saveAllPanels();
+                    }
                 }
-            }]);
+            ]);
             App.directive('toolbar', ['$window', 'ResizeService', function($window, ResizeService) {
                return {
                    restrict: 'EA',

@@ -4,30 +4,25 @@
 (function() {
     'use strict';
 
-    define([
-        'angular'
-    ], function(angular) {
-        function init(App) {
+    angular.module('app')
 
-            App.controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelProvider',
-                function($rootScope, $scope, PanelProvider) {
-                    $scope.getPanels = function() {
-                        return PanelProvider.getPanels();
-                    };
+    .controller('TileContainerCtrl', ['$rootScope', '$scope', 'PanelProvider',
+        function($rootScope, $scope, PanelProvider) {
+            $scope.getPanels = function() {
+                return PanelProvider.getPanels();
+            };
 
-                }
-            ]);
-            App.directive('tileContainer', ['$window', function() {
-               return {
-                   restrict: 'EA',
-                   templateUrl: 'js/templates/tileContainer.html',
-                   controller: 'TileContainerCtrl',
-                   link: function(scope, element) {
-                       element.children().css("height", (window.innerHeight - 16 - 10 /*scrollbar height*/) + "px");
-                   }
-               }
-            }]);
         }
-        return {start: init};
-    });
+    ])
+    .directive('tileContainer', ['$window', function() {
+       return {
+           restrict: 'EA',
+           templateUrl: 'js/templates/tileContainer.html',
+           controller: 'TileContainerCtrl',
+           link: function(scope, element) {
+               element.children().css("height", (window.innerHeight - 16 - 10 /*scrollbar height*/) + "px");
+           }
+       }
+    }]);
+
 }).call(this);

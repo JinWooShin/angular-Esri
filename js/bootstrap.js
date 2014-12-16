@@ -7,9 +7,11 @@
     define([
         'angular',
 
+        //Load services/providers first
         'services/ResizeService',
         'services/PanelProvider',
 
+        //then load controllers
         'controllers/indexCtrl',
         'controllers/ProjectCtrl',
         'controllers/MapCtrl',
@@ -19,21 +21,8 @@
         'controllers/PanelCtrl'
     ], function(angular, ResizeService, PanelProvider,
                 ProjectCtrl, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
-        function init() {
-            var App = angular.module('app', ['ui.bootstrap', 'ngAnimate']);
-            PanelProvider.start(App);
-            ResizeService.start(App);
+        function init(App) {
 
-            ProjectCtrl.start(App);
-            indexCtrl.start(App);
-            MapCtrl.start(App);
-            ToolbarCtrl.start(App);
-            TileContainer.start(App);
-            PanelContainerCtrl.start(App);
-            PanelCtrl.start(App);
-
-
-            //Panel configuration
             App.config(function(PanelProviderProvider) {
                 PanelProviderProvider.panelsConfig = {
                     wellInfo: {
@@ -41,7 +30,6 @@
                     }
                 };
             });
-
             angular.bootstrap(document.body, ['app']);
             return App;
         }

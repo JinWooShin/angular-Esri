@@ -3,17 +3,10 @@
  */
 (function() {
     'use strict';
-
-    define([
-        'angular'
-    ], function(angular) {
-
-        function init(App) {
-            App.controller('IndexCtrl', ['$scope', function($scope) {
+    angular.module('app')
+    .controller('IndexCtrl', ['$scope', function($scope) {
 
 
-            }]);
-        }
-        return {start: init};
-    })
+    }]);
+
 }).call(this);

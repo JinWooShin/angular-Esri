@@ -33,13 +33,14 @@
         }]
     });
 
+    var App = angular.module('app', ['myApp.templates', 'ui.bootstrap', 'ngAnimate']);
     require([
         'dojo/ready',
         'js/bootstrap'
     ], function(ready, bootstrap) {
         ready(function() {
             console.log('start the bootstrapper');
-            bootstrap.start();
+            bootstrap.start(App);
         });
     });
 }).call(this);

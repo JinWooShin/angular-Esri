@@ -12,13 +12,11 @@
                 return _panel.id === id;
             });
         };
-        //console.log($templateCache.get('panel_map.html'));
         var createPanel = function(type) {
             var panel = {};
             switch(type) {
                 case "map":
                     panel = {
-                        //templateUrl: "js/templates/Panels/panel_map.html",
                         content: {
                             title: "Map",
                             content: "Map goes here"
@@ -27,7 +25,6 @@
                     break;
                 case "search":
                     panel = {
-                        //templateUrl: "",
                         content: {
                             title: "Search",
                             content: "Filter goes here"
@@ -36,7 +33,6 @@
                     break;
                 case "project":
                     panel = {
-                        //templateUrl: "js/Templates/Panels/panel-project.html",
                         content: {
                             title: "Project",
                             content: "Filter goes here"
@@ -45,7 +41,6 @@
                     break;
                 default:
                     panel = {
-                        //templateUrl: "",
                         content: {
                             title: type,
                             content: "Whatever goes here"
@@ -68,10 +63,20 @@
                 clear: function() {
                     panels = [];
                 },
+                getPanel: function(type) {
+                    var panel = angular.copy(ret.panelConfigs.panels[type]);
+                    panel.id = "panel-"+panel.content.title;
+                    panel.parent = "root";
+                    panel.children = [];
+                    panel.lock = false;
+                    panel.collapse = false;
+                    return panel;
+                },
                 addPanel: function(type) {
+                    //var panel = ret.getPanel(type);
                     var panel = createPanel(type);
-                    panel.templateUrl = "panel-"+type+".html";
-                    panels.push();
+                    panel.templateUrl =  "panel-"+type+".html";
+                    panels.push(panel);
                     $rootScope.$broadcast("panelChanged", panels);
                 },
                 removePanel: function(panel) {

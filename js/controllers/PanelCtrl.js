@@ -47,7 +47,7 @@
         }
     ])
 
-    .directive("layoutPanel", function() {
+    .directive("layoutPanel", [function() {
         return {
             restrict: 'EA',
             controller: 'PanelCtrl',
@@ -57,8 +57,9 @@
             },
             link: function(scope, element) {
                 element.children().css("height", (window.innerHeight - 18 - 10 /*scrollbar height*/) + "px");
+
             }
         };
-    });
+    }]);
 
 }).call(this);

@@ -17,6 +17,7 @@
 .layoutContainer {
     margin: 0px;
     padding: 0px;
+    width: auto !important;
 }
 
 /******************/

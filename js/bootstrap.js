@@ -25,9 +25,33 @@
 
             App.config(function(PanelProviderProvider) {
                 PanelProviderProvider.panelsConfig = {
-                    wellInfo: {
-                        default: ["toc"]
+                    panels: {
+                        map: {
+                            content: {
+                                title: "Map",
+                                content: "Map goes here"
+                            }
+                        },
+                        search: {
+                            content: {
+                                title: "Search",
+                                content: "Search goes here"
+                            }
+                        },
+                        project: {
+                            content: {
+                                title: "Project",
+                                content: "Project goes here"
+                            }
+                        },
+                        control: {
+                            content: {
+                                title: "Control",
+                                content: "Control goes here"
+                            }
+                        }
                     }
+
                 };
             });
             angular.bootstrap(document.body, ['app']);

@@ -17,7 +17,6 @@
 .layoutContainer {
     margin: 0px;
     padding: 0px;
-    width: auto !important;
 }
 
 /******************/
@@ -85,6 +84,14 @@
     height:30px;
     color: #bebebe;
     background-color: #3c645a;
+}
+
+.panelMap.control {
+    width: 200px;
+    float: left;
+}
+.panelMap.map {
+    width:400px;
 }
 /*.layoutPanel.horizontal.minimize  > .panel-body.layoutPanel {*/
 

@@ -5,11 +5,10 @@
     "use strict";
 
     define([
-        'angular',
-
         //Load services/providers first
         'services/ResizeService',
         'services/PanelProvider',
+        'services/MapService',
 
         //then load controllers
         'controllers/indexCtrl',
@@ -19,7 +18,7 @@
         'controllers/TileContainerCtrl',
         'controllers/PanelContainerCtrl',
         'controllers/PanelCtrl'
-    ], function(angular, ResizeService, PanelProvider,
+    ], function(ResizeService, PanelProvider, MapService,
                 ProjectCtrl, indexCtrl, MapCtrl, ToolbarCtrl, TileContainer, PanelContainerCtrl, PanelCtrl) {
         function init(App) {
 

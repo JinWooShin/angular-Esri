@@ -4,12 +4,10 @@
 (function() {
     'use strict';
 
-    define([
-        'esri/map'
-    ], function(Map) {
-        angular.module('app')
+    angular.module('app')
+    .controller('MapCtrl', ['$rootScope', '$scope', '$attrs', 'MapService',
+        function($rootScope, $scope, $attrs, MapService) {
 
-        .controller('MapCtrl', ['$rootScope', '$scope', '$attrs', function($rootScope, $scope, $attrs) {
             var self = this;
             var mapDiv, layers = [];
 
@@ -33,7 +31,7 @@
                     zoom: $attrs.zoom ? parseInt($attrs.zoom) : 2,
                     basemap: $attrs.basemap ? $attrs.basemap : 'streets'
                 };
-                $scope.map = new Map($attrs.id, options);
+                $scope.map = MapService.getMap($attrs.id, options);
 
                 $scope.map.on('load', function() {
                     $rootScope.$broadcast('map-load');
@@ -54,16 +52,16 @@
                     layers.push(layer);
                 }
             };
-        }])
+    }])
 
-        .directive('esriMap', function() {
-           return {
-               restrict: 'EA',
-               controller: 'MapCtrl',
-               link: function(scope, element, attrs, ctrl) {
-                   ctrl.init(element);
-               }
+    .directive('esriMap', function() {
+       return {
+           restrict: 'EA',
+           controller: 'MapCtrl',
+           link: function(scope, element, attrs, ctrl) {
+               ctrl.init(element);
            }
-        });
-    })
+       }
+    });
+
 }).call(this);
